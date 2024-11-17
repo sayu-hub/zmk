@@ -72,7 +72,7 @@ config ZMK_BEHAVIOR_MOUSE_KEY_PRESS
     bool
     default y
     depends on DT_HAS_ZMK_BEHAVIOR_MOUSE_KEY_PRESS_ENABLED && ZMK_MOUSE
-
+    
 config ZMK_BEHAVIOR_STICKY_KEY
     bool
     default y
@@ -87,7 +87,6 @@ config ZMK_BEHAVIOR_STICKY_KEY_MAX_HELD
       Max number of simultaneously held sticky keys
 
 endif
-
 config ZMK_BEHAVIOR_SOFT_OFF
     bool
     default y
