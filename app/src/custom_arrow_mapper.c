@@ -25,10 +25,8 @@ static uint32_t current_arrow_y = 0;
  *
  * ※ evt->axis や evt->value のフィールドは、実装環境に合わせて変更してください。
  */
-static int custom_arrow_processor_process(const struct device *dev,
-                                            struct zmk_input_event *evt,
-                                            void *context)
-{
+static int custom_arrow_processor_process(const struct device *dev,　struct zmk_input_event *evt,
+                                          void *context) {
     int16_t delta = (int16_t)evt->value;
 
     if (evt->axis == INPUT_REL_X) {
@@ -105,6 +103,5 @@ static const struct zmk_input_processor_driver_api custom_arrow_processor_driver
 
 /* デバイス定義。compatible 文字列は DTS で参照する際に使用します。 */
 DEVICE_DEFINE(custom_arrow_mapper, "zmk,input-processor-custom-arrow",
-              custom_arrow_processor_process,
-              NULL, NULL, POST_KERNEL, CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,
-              &custom_arrow_processor_driver_api);
+              custom_arrow_processor_process, NULL, NULL, POST_KERNEL,
+              CONFIG_KERNEL_INIT_PRIORITY_DEFAULT, &custom_arrow_processor_driver_api);
